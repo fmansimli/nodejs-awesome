@@ -41,6 +41,15 @@ build/Release
 node_modules/
 jspm_packages/
 
+.idea
+.vscode
+dist/
+/dist
+/build
+build/
+
+package-lock.json
+
 # TypeScript v1 declaration files
 typings/
 

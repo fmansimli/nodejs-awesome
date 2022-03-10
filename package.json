@@ -1,0 +1,78 @@
+{
+  "name": "nodejs-awesome",
+  "version": "1.0.0",
+  "description": "NodeJS with TypeScript and babel config",
+  "main": "src/server.ts",
+  "scripts": {
+    "dev-ts": "nodemon --exec ts-node src/server.ts",
+    "re-dev-ts": "yarn clear && yarn install && nodemon --exec ts-node src/server.ts",
+    "dev-babel": "nodemon --exec babel-node src/server.ts --extensions \".ts\"",
+    "re-dev-babel": "yarn clear && yarn install && nodemon --exec babel-node src/server.ts --extensions \".ts\"",
+    "start": "yarn build && node dist/server.js",
+    "start:pm2": "yarn build && pm2 start dist/server.js",
+    "build": "yarn clear:dist && yarn build:types",
+    "clear": "rm -rf dist/ node_modules/ package-lock.json",
+    "clear:dist": "rm -rf dist/",
+    "type-check": "tsc --noEmit",
+    "type-check:watch": "npm run type-check -- --watch",
+    "build:types": "tsc",
+    "build:js": "babel src -d dist",
+    "transform:js": "babel dist --out-dir dist"
+  },
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "compression": "^1.7.4",
+    "cookie-parser": "^1.4.5",
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "helmet": "^4.6.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.2.4",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.3",
+    "slugify": "^1.6.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.14.5",
+    "@babel/core": "^7.14.6",
+    "@babel/node": "^7.16.8",
+    "@babel/plugin-transform-runtime": "^7.17.0",
+    "@babel/polyfill": "^7.12.1",
+    "@babel/preset-env": "^7.16.11",
+    "@babel/preset-typescript": "^7.16.7",
+    "@babel/register": "^7.17.0",
+    "@types/bcrypt": "^5.0.0",
+    "@types/compression": "^1.7.1",
+    "@types/cookie-parser": "^1.4.2",
+    "@types/cors": "^2.8.12",
+    "@types/dotenv": "^8.2.0",
+    "@types/express": "^4.17.13",
+    "@types/helmet": "^4.0.0",
+    "@types/jsonwebtoken": "^8.5.5",
+    "@types/morgan": "^1.9.3",
+    "@types/node": "^16.7.4",
+    "@typescript-eslint/eslint-plugin": "^5.14.0",
+    "@typescript-eslint/parser": "^5.14.0",
+    "babel-plugin-module-resolver": "^4.1.0",
+    "babel-preset-minify": "^0.5.1",
+    "eslint": "^8.10.0",
+    "nodemon": "^2.0.12",
+    "ts-node": "^10.2.1",
+    "typescript": "^3.7.5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fmansimli/nodejs-awesome.git"
+  },
+  "keywords": [
+    "typescript",
+    "nodejs"
+  ],
+  "author": "Farid Mansimli",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fmansimli/nodejs-awesome/issues"
+  },
+  "homepage": "https://github.com/fmansimli/nodejs-awesome#readme"
+}

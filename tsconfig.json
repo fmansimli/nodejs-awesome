@@ -1,0 +1,30 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "baseUrl": ".",
+    "paths": {
+      "*": ["src/*"],
+      "tests": ["tests/*"],
+      "@config/*": ["src/config/*"],
+      "@routes/*": ["src/routes/*"],
+      "@controllers/*": ["src/controllers/*"],
+      "@middlewares/*": ["src/middlewares/*"],
+      "@db/*": ["src/db/*"],
+      "@models/*": ["src/models/*"],
+      "@validations/*": ["src/validations/*"],
+      "@services/*": ["src/services/*"]
+    },
+
+    "module": "commonjs",
+    "rootDir": "./src",
+
+    "outDir": "./dist",
+
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+
+    "skipLibCheck": true
+  },
+  "exclude": ["node_modules"]
+}
